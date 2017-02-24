@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HostFormActivity" />
+        <activity android:name=".HostFormEditActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -30,12 +31,16 @@
         <activity
             android:name=".HostDeleteActivity"
             android:label="@string/title_activity_host_delete"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".qstat_activity" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HostEditActivity"
+            android:label="@string/title_activity_host_edit"
+            android:theme="@style/AppTheme.NoActionBar" />
+    
         <activity
             android:name=".ServerTabActivity"
             android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
