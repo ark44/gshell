@@ -130,6 +130,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_edit) {
+            Log.d("File", "Edit host");
+            startActivity(new Intent(getApplicationContext(), HostEditActivity.class));
+            return true;
+        }
+
         if (id == R.id.action_delete) {
             Log.d("File", "Delete host");
             startActivity(new Intent(getApplicationContext(), HostDeleteActivity.class));

@@ -12,13 +12,13 @@ import android.widget.ListView;
 
 import java.io.File;
 
-public class HostDeleteActivity extends AppCompatActivity {
+public class HostEditActivity extends AppCompatActivity {
 
     public String output;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_host_delete);
+        setContentView(R.layout.activity_host_edit);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -74,11 +74,10 @@ public class HostDeleteActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Snackbar.make (view, "Include function to delete file number " + String.valueOf(position), Snackbar.LENGTH_LONG)
-                        .setDuration(2000).show();
-                new File(contextDir.getAbsolutePath() + "/dataFiles"+"/"+fileArray[position]).delete();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                //removeFileFromDirectory(position, view);
+                removeFileFromDirectory(position, view);
+                Intent FormEditintent = new Intent(getApplicationContext(), HostFormEditActivity.class);
+                FormEditintent.putExtra("filepath",contextDir.getAbsolutePath() + "/dataFiles"+"/"+fileArray[position]);
+                startActivity(FormEditintent);
                 //startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
             /*@Override
